@@ -1,0 +1,242 @@
+﻿@using KissanSarthiPro;
+@addTagHelper*, Microsoft.AspNetCore.Mvc.TagHelpers
+@model KissanSarthi.Models.Agriindex
+@{
+    ViewData["Title"] = "UserInput";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1><b>Enter Your Details Here :</b></h1>
+<hr />
+<html>
+<head>
+    <style media="screen and (min-width: 100%)">
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
+    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>*@
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+
+
+</head>
+<body style="background-image:url(https://cdn.pixabay.com/photo/2017/03/05/01/22/barley-2117454_960_720.jpg); background-repeat: no-repeat; background-size: 100% 109%;">
+   
+
+        <div class="row">
+            <div class="col-md-4">
+                @using (Html.BeginForm("UserFilterShow", "User", FormMethod.Post))
+                {
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    @*<div class="form-group" hidden>
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="UserId" class="control-label"></label>
+                <input asp-for="UserId" class="form-control" />
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>*@
+                    <div style="display:flex; flex-direction:row">
+
+                        <div class="form-group">
+                            <label asp-for="req.Country" class="control-label"></label>
+                            <select asp-for="req.Country" class="" style="width:300px;height:38px ; border-radius:4px" required>
+
+                                <option value="">Select Country</option>
+                                <option value="India">India</option>
+                            </select>
+                            <span asp-validation-for="req.Country" class="text-danger"></span>
+                            @*<label asp-for="myc.CountryName" class="control-label"></label>*@
+                            @*<input asp-for="req.Country" class="form-control" style="width:300px" />*@
+                            @*<select asp-for="req.Country" id="CountryId" class="form-control" style= "width:300px;"  asp-items="@(new SelectList(ViewBag.listofcountry,"CountryId","CountryName"))"></select>*@
+                            @*<span asp-validation-for="myc.CountryName" class="text-danger"></span>*@
+                        </div>
+
+                        <div class="form-group" style="margin-left:20%">
+                            <label asp-for="req.State" class="control-label"></label>
+                            <select asp-for="req.State" class="" style="width:300px;height:38px; border-radius:4px" required>
+
+                                <option value="">Select State</option>
+                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                <option value="Rajasthan">Rajasthan</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="Tamil nadu">Tamil nadu</option>
+                            </select>
+                            <span asp-validation-for="req.State" class="text-danger"></span>
+                            @*<label class="control-label">State Name</label>*@
+                            @*<input asp-for="req.State" class="form-control" style="width:300px" />*@
+                            @*<select asp-for="req.State" class="form-control" id="StateId" name="StateId" style="width:300px;"  asp-items="@(new SelectList(string.Empty,"StateId","StateName"))"></select>*@
+                            @*<span asp-validation-for="" class="text-danger"></span>*@
+                        </div>
+                        <div class="form-group" style="margin-left:20%">
+                            <label asp-for="req.City" class="control-label"></label>
+                            <select asp-for="req.City" class="" style="width:300px;height:38px ; border-radius:4px" required>
+
+                                <option value="">Select City</option>
+                                <option value="Visakhapatnam ">Visakhapatnam </option>
+                                <option value="Jodhpur">Jodhpur</option>
+                                <option value="Jaipur">Jaipur</option>
+                                <option value="Ayodhya">Ayodhya</option>
+                                <option value="Lucknow">Lucknow</option>
+                                <option value="Varanasi">Varanasi</option>
+                                <option value="Chennai">Chennai</option>
+                                <option value="Coimbatore">Coimbatore</option>
+                                <option value="Tiruchirappalli">Tiruchirappalli</option>
+                                <option value="Madurai">Madurai</option>
+
+
+                            </select>
+                            <span asp-validation-for="req.City" class="text-danger"></span>
+                            @*<label class="control-label">City Name</label>*@
+                            @*<input asp-for="req.State" class="form-control" style="width:300px" />*@
+                            @*<select asp-for="req.City" class="form-control" id="CityId" name="CityId" style="width:300px;"  asp-items="@(new SelectList(string.Empty,"CityId","CityName"))"></select>*@
+                            @*<span asp-validation-for="mycc.CityName" class="text-danger"></span>*@
+                        </div>
+
+                    </div>
+                    <div style="display:flex; flex-direction:row; margin-top:20%">
+
+                        @*<div class="form-group">
+                    <label asp-for="req.Pincode" class="control-label"></label>
+                    <input asp-for="req.Pincode" class="form-control" style="width:300px" />
+                    <span asp-validation-for="req.Pincode" class="text-danger"></span>
+                </div>*@
+                        <div class="form-group" style="margin-left:20%">
+                            <label asp-for="req.Categories_of_Crops" class="control-label"></label>
+                            <select asp-for="req.Categories_of_Crops" class="" style="width:300px;height:38px ; border-radius:4px" required>
+
+                                <option value="">Select Crops Categories</option>
+                                <option value="Kharif">Kharif</option>
+                                <option value="Rabi">Rabi</option>
+                                <option value="Zaid">Zaid </option>
+                            </select>
+                            <span asp-validation-for="req.City" class="text-danger"></span>
+                        </div>
+                        <div class="form-group" style="margin-left:20%">
+                            <label asp-for="req.Area_of_land" class="control-label"><span>Area_of_land (In Acre)</span></label>
+                            <select asp-for="req.Area_of_land" class="" style="width:300px;height:38px ; border-radius:4px" required>
+
+                                <option value="">Select Area</option>
+                                <option value="100">100</option>
+                                <option value="250">250</option>
+                                <option value="500">500 </option>
+                                <option value="1000">1000 </option>
+                                <option value="2000">2000 </option>
+                                <option value="4000">4000 </option>
+                                <option value="8000">8000 </option>
+                            </select>
+                            <span asp-validation-for="req.Area_of_land" class="text-danger"></span>
+                        </div>
+                        <div class="form-group" style="margin-left:20%">
+                            <label asp-for="req.Type_of_Crops" class="control-label"></label>
+                            <select asp-for="req.Type_of_Crops" class="" style="width:300px;height:38px ; border-radius:4px" required>
+
+                                <option value="">Select Crops</option>
+                                <option value="Rice">Rice</option>
+                                <option value="Jowar">Jowar</option>
+                                <option value="Bajra">Bajra</option>
+                                <option value="Maize">Maize</option>
+                                <option value="Cotton">Cotton</option>
+                                <option value="Groundnut">Groundnut</option>
+                                <option value="Jute">Jute</option>
+                                <option value="Sugarcane">Sugarcane</option>
+                                <option value="Turmeric">Turmeric</option>
+                                <option value="Pulses">Pulses</option>
+                                <option value="Wheat">Wheat</option>
+                                <option value="Oat">Oat</option>
+                                <option value="Gram">Gram</option>
+                                <option value="Pea">Pea</option>
+                                <option value="Barley">Barley</option>
+                                <option value="Potato">Potato</option>
+                                <option value="Tomato">Tomato</option>
+                                <option value="Onion">Onion</option>
+                                <option value="Oil seeds">Oil seeds</option>
+                                <option value="Cucumber">Cucumber</option>
+                                <option value="Bitter Gourd">Bitter Gourd</option>
+                                <option value="Pumpkin">Pumpkin</option>
+                                <option value="Watermelon">Watermelon</option>
+                                <option value="Muskmelon">Muskmelon</option>
+                                <option value="Moong Dal">Moong Dal</option>
+                            </select>
+                            <span asp-validation-for="req.Type_of_Crops" class="text-danger"></span>
+                        </div>
+                    </div>
+                    @*<div style="display:flex; flex-direction:row">
+
+                <div class="form-group">
+                    <label asp-for="req.Weather" class="control-label"></label>
+                    <input asp-for="req.Weather" class="form-control" style="width:300px" />
+                    <span asp-validation-for="req.Weather" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="margin-left:20%">
+                    <label asp-for="req.SoilType" class="control-label"></label>
+                    <input asp-for="req.SoilType" class="form-control" style="width:300px" />
+                    <span asp-validation-for="req.SoilType" class="text-danger"></span>
+                </div>
+                <div class="form-group" style="margin-left:20%">
+                    <label asp-for="req.Temperature" class="control-label"></label>
+                    <input asp-for="req.Temperature" class="form-control" style="width:300px" />
+                    <span asp-validation-for="req.Temperature" class="text-danger"></span>
+                </div>
+            </div>*@
+                    <div class="form-group" style="margin-top:20%;">
+                        <input type="submit" value="Submit" class="btn-success" />
+                        <button class="btn-primary">
+                            <a style="color:white" asp-controller="User" asp-action="Dashboard">Back</a>
+                        </button>
+                    </div>
+                    
+                }
+              </div>
+        </div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var items = "<option value='0'>Select</option>";
+        $('#StateId').html(items);
+        $('#CityId').html(items);
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#CountryId').change(function () {
+            var url = '@Url.Content("~/")' + "User/GetState";
+            var ddlsource = '#CountryId';
+            $.getJSON(url, { CountryId: $(ddlsource).val() }, function (data) {
+                var items = '';
+                $("#StateId").empty();
+                $.each(data, function (i, State) {
+                    items += "<option value = '" + State.value + "'>" + State.text + "</option>";
+                });
+                $('#StateId').html(items);
+            });
+        });
+
+        $('#StateId').change(function () {
+            var url = '@Url.Content("~/")' + "User/GetCity";
+            var ddlsource = '#StateId';
+            $.getJSON(url, { StateId: $(ddlsource).val() }, function (data) {
+                var items = '';
+                $("#CityId").empty();
+                $.each(data, function (i, City) {
+                    items += "<option value = '" + City.value + "'>" + City.text + "</option>";
+                });
+                $('#CityId').html(items);
+            });
+        });
+
+
+    });
+
+</script>
+
+
+
+
+
+
+

@@ -1,0 +1,125 @@
+﻿@*@model IEnumerable<KissanSarthi.Models.UserInput>*@
+@using KissanSarthiPro;
+@addTagHelper*, Microsoft.AspNetCore.Mvc.TagHelpers
+@model KissanSarthi.Models.Agriindex
+
+
+
+@{
+    ViewData["Title"] = "UserFilterShow";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html>
+
+<head>
+    <style media="screen and (min-width: 100%)">
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <style>
+        table, th, tr, td {
+            border: 2px solid white;
+            color: black;
+        }
+    </style>
+</head>
+<body style="background-image:url(https://img.freepik.com/free-photo/farmland_1112-1235.jpg?w=740&t=st=1684213244~exp=1684213844~hmac=7e4e9a23c4dd7a79b4efc5e1d3e74f1634f8fa32c0b621f29a4f765e991b1262); background-repeat: no-repeat; background-size:100%; height:100vh; position:absolute">
+    <h3 style="color:white;background-color:black; width:15%">Search Results</h3>
+
+    <div>
+
+        @foreach (var item in Model.AgriShow)
+        {
+
+            <table style="border:2px solid white; width:50%; margin-left:36%" class="table table-bordered  table-condensed " cellpadding="0" cellspacing="0">
+                <tr>
+                    <th><b>Country</b></th>
+                    <td><b>@item.Country</b></td>
+                </tr>
+                <tr>
+                    <th><b>State</b></th>
+                    <td><b>@item.State</b></td>
+
+
+                </tr>
+                <tr>
+                    <th><b>City</b></th>
+                    <td><b>@item.City</b></td>
+
+                </tr>
+                <tr>
+
+                    <th><b>Pincode</b></th>
+                    <td><b>@item.Pincode</b></td>
+
+                </tr>
+
+                <tr>
+                    <th><b>Area_of_land(Acre)</b></th>
+                    <td><b>@item.Area_of_land</b></td>
+
+                </tr>
+                <tr>
+                    <th><b>Type_of_Crops</b></th>
+                    <td><b> @item.Type_of_Crops</b></td>
+
+
+                </tr>
+                <tr>
+                    <th><b>Categories_of_Crops</b></th>
+                    <td><b> @item.Categories_of_Crops</b></td>
+                </tr>
+                <tr>
+                    <th><b>Weather</b></th>
+                    <td><b>@item.Weather</b></td>
+
+                </tr>
+                <tr>
+                    <th><b>SoilType</b></th>
+                    <td><b>@item.SoilType</b></td>
+
+                </tr>
+                <tr>
+                    <th><b>Temperature(°C)</b></th>
+                    <td><b>@item.Temperature</b></td>
+
+                </tr>
+
+                <tr>
+                    <th><b>Pesticide</b></th>
+                    <td><b>@item.Pesticide</b></td>
+
+                </tr>
+                <tr>
+                    <th><b>Water(m³)*(1m³ = 1000L)</b></th>
+                    <td><b>@item.Water</b></td>
+
+                </tr>
+                <tr>
+                    <th><b>Seeds(Kg)</b></th>
+                    <td><b>@item.Seeds</b></td>
+
+                </tr>
+                <tr>
+                    <th><b>Cost(₹)</b></th>
+                    <td><b>@item.Cost  </b><b>₹</b></td>
+
+                </tr>
+
+            </table>
+            
+        }
+    </div>
+
+    <div>
+
+        <button class="btn-primary">
+            <a style="color:white" asp-controller="User" asp-action="Dashboard">Back To Dashboard</a>
+        </button>
+    </div>
+
+</body>
+
+
+</html>

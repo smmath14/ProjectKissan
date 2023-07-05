@@ -1,0 +1,106 @@
+﻿@model KissanSarthiPro.Models.FarmInfo
+
+@{
+    ViewData["Title"] = "FarmCreate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>FarmCreate</h2>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<head></head>
+<body style="background-image:url(https://img.freepik.com/free-photo/farmland_1112-1235.jpg?w=740&t=st=1684213244~exp=1684213844~hmac=7e4e9a23c4dd7a79b4efc5e1d3e74f1634f8fa32c0b621f29a4f765e991b1262); background-repeat: no-repeat; background-size: 100% 100%;">
+
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="FarmCreate">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                @*<div class="form-group">
+                        <label asp-for="Id" class="control-label"></label>
+                        <input asp-for="Id" class="form-control" />
+                        <span asp-validation-for="Id" class="text-danger"></span>
+                    </div>*@
+                @*<div class="form-group">
+                        <label asp-for="UserId" class="control-label"></label>
+                        <input asp-for="UserId" class="form-control" id="User"/>
+                        <span asp-validation-for="UserId" class="text-danger"></span>
+                    </div>*@
+                <div class="form-group">
+                    <label asp-for="FarmName" class="control-label"></label>
+                    <input asp-for="FarmName" class="form-control" />
+                    <span asp-validation-for="FarmName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="FirstName" class="control-label"></label>
+                    <input asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LastName" class="control-label"></label>
+                    <input asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="UserName" class="control-label"></label>
+                    <input asp-for="UserName" class="form-control" />
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Country" class="control-label"></label>
+                    <input asp-for="Country" class="form-control" />
+                    <span asp-validation-for="Country" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="State" class="control-label"></label>
+                    <input asp-for="State" class="form-control" />
+                    <span asp-validation-for="State" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="City" class="control-label"></label>
+                    <input asp-for="City" class="form-control" />
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Pincode" class="control-label"></label>
+                    <input asp-for="Pincode" class="form-control" />
+                    <span asp-validation-for="Pincode" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="FarmSize" class="control-label"><span>FarmSize (In Acre)</span></label>
+                    <input asp-for="FarmSize" class="form-control" />
+                    <span asp-validation-for="FarmSize" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Date_of_Created" class="control-label"></label>
+                    <input asp-for="Date_of_Created" class="form-control" type="date" />
+                    <span asp-validation-for="Date_of_Created" class="text-danger"></span>
+                </div>
+                <span style="color:black">
+                    <b>Current State : </b>
+                    <select asp-for="Current_State">
+                        <option value="Active">Active</option>
+                        <option value="De-Active">De-Active</option>
+                        <option value="Suspended">Suspended</option>
+                    </select>
+                </span>
+                <div class="form-group">
+                    <input type="submit" value="Create Farm" class="btn-success" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <button class="btn-primary">
+            <a style="color:white" asp-controller="User" asp-action="Dashboard">Back</a>
+        </button>
+
+    </div>
+</body>
+
+    <script type="text/javascript">
+        document.getElementById('User').value = TempData["Id"];
+    </script>
+

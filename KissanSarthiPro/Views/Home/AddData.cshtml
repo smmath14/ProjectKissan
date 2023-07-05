@@ -1,0 +1,125 @@
+﻿@model KissanSarthi.Models.UserInput
+
+@{
+    ViewData["Title"] = "AddData";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AddData</h2>
+
+
+<hr />
+<body style="background-image:url(https://media.istockphoto.com/id/1091940998/photo/sunrise-strawberry-farm-landscape-agricultural-agriculture.jpg?s=612x612&w=0&k=20&c=PY6nR5kk5T4RwHd-aYBRCXA3Se3qYtflSKnJqjFu-PM=); background-repeat: no-repeat; background-size: 100vw 100vh;">
+        <div class="row">
+
+            <form asp-action="AddData">
+                <div style="display:flex; flex-direction:row">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    @*<div class="form-group">
+                                <label asp-for="Id" class="control-label"></label>
+                                <input asp-for="Id" class="form-control" />
+                                <span asp-validation-for="Id" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="UserId" class="control-label"></label>
+                                <input asp-for="UserId" class="form-control" />
+                                <span asp-validation-for="UserId" class="text-danger"></span>
+                            </div>*@
+                    <div class="form-group">
+                        <label asp-for="Country" class="control-label"></label>
+                        <input asp-for="Country" class="form-control"  required />
+                        <span asp-validation-for="Country" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="margin-left:8%">
+                        <label asp-for="State" class="control-label"></label>
+                        <input asp-for="State" class="form-control"  required />
+                        <span asp-validation-for="State" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="margin-left:8%">
+                        <label asp-for="City" class="control-label"></label>
+                        <input asp-for="City" class="form-control"   required />
+                        <span asp-validation-for="City" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="margin-left:8%">
+                        <label asp-for="Pincode" class="control-label"></label>
+                        <input asp-for="Pincode" class="form-control" type="number"  required />
+                        <span asp-validation-for="Pincode" class="text-danger"></span>
+                    </div>
+                </div>
+                <div style="display:flex; flex-direction:row">
+
+
+                    <div class="form-group">
+                        <label asp-for="Area_of_land" class="control-label">Area_of_land(Acre)</label>
+                        <input asp-for="Area_of_land" class="form-control" type="number" required />
+                        <span asp-validation-for="Area_of_land" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="margin-left:8%" >
+                        <label asp-for="Type_of_Crops" class="control-label"></label>
+                        <input asp-for="Type_of_Crops" class="form-control" required />
+                        <span asp-validation-for="Type_of_Crops" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="margin-left:8%">
+                        <label asp-for="Categories_of_Crops" class="control-label"></label>
+                        <input asp-for="Categories_of_Crops" class="form-control" required />
+                        <span asp-validation-for="Categories_of_Crops" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="margin-left:8%">
+                        <label asp-for="Weather" class="control-label"></label>
+                        <input asp-for="Weather" class="form-control" required />
+                        <span asp-validation-for="Weather" class="text-danger"></span>
+                    </div>
+                </div>
+                <div style="display:flex; flex-direction:row">
+
+
+                    <div class="form-group">
+                        <label asp-for="SoilType" class="control-label" style="color:white"></label>
+                        <input asp-for="SoilType" class="form-control" required />
+                        <span asp-validation-for="SoilType" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="margin-left:8%">
+                        <label asp-for="Temperature" class="control-label" style="color:white"></label>
+                        <input asp-for="Temperature" class="form-control" required type="number" />
+                        <span asp-validation-for="Temperature" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="margin-left:8%">
+                        <label asp-for="Pesticide" class="control-label" style="color:white"></label>
+                        <input asp-for="Pesticide" class="form-control" required />
+                        <span asp-validation-for="Pesticide" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="margin-left:8%">
+                        <label asp-for="Water" class="control-label" style="color:white"></label>
+                        <input asp-for="Water" class="form-control" required />
+                        <span asp-validation-for="Water" class="text-danger"></span>
+                    </div>
+                </div>
+                <div style="display:flex; flex-direction:row">
+
+                    <div class="form-group">
+                        <label asp-for="Seeds" class="control-label" style="color:white"></label>
+                        <input asp-for="Seeds" class="form-control" required />
+                        <span asp-validation-for="Seeds" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="margin-left:8%">
+                        <label asp-for="Cost" class="control-label" style="color:white"></label>
+                        <input asp-for="Cost" class="form-control" required />
+                        <span asp-validation-for="Cost" class="text-danger"></span>
+                    </div>
+                </div>
+                    <div class="form-group">
+                        <input type="submit" value="CreateNew" class="btn-success" />
+                        <input type="reset" value="Reset" class="btn-danger" />
+                    </div>
+            </form>
+        </div>
+    
+
+    <div>
+        <button class="btn-primary">
+            <a asp-action="AdminDashboard" asp-controller="Home" style="color:white">Back</a>
+        </button>
+
+    </div>
+</body>
+

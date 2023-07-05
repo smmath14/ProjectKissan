@@ -1,0 +1,76 @@
+﻿@using Microsoft.AspNetCore.Http;
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div #box {
+            border: 1px solid black;
+            margin-left: 40%;
+           
+            width: 33vw;
+        }
+    </style>
+</head>
+
+<h2><b>Dashboard</b></h2>
+
+
+
+<body style="background-image:url(https://img.freepik.com/free-photo/farmland_1112-1235.jpg?w=740&t=st=1684213244~exp=1684213844~hmac=7e4e9a23c4dd7a79b4efc5e1d3e74f1634f8fa32c0b621f29a4f765e991b1262); background-repeat: no-repeat; background-size:cover; height:100vh; width:100vw">
+
+    <marquee onmouseover="this.stop();" onmouseout="this.start();"><span style="font-size:160%; color:black">For Current Government Policy For farmer Welfare : <a href="https://agricoop.gov.in/en/PolicyDiv#gsc.tab=0" style="color:darkblue"> Click Here </a></span></marquee>
+
+    <div style="display:flex;flex-direction:row;">
+        <div style="display:flex;flex-direction:row; width:30%; ">
+
+
+            <button class="btn-success" style="font-size:100%;height:15%;width:120px; margin-right:20%">
+                <a style="color:white" asp-controller="User" asp-action="UserInput">Farm Bot</a>
+            </button>
+
+
+            <button class="btn-info" style="font-size:100%; height:15%;width:120px;">
+                @*<a style="color:white" asp-controller="User" asp-action="Dashboard">Farm Info</a>*@
+                @Html.ActionLink("FarmInfo", "FarmInfo", new { id = @Context.Session.GetInt32("ss") }, new { @style = "color:white" })
+            </button>
+
+        </div>
+
+
+
+        <div id="box">
+            <p style="text-align:center; background-color:green; color:white"><b>Latest Headline</b></p>
+            <marquee direction="up" ; onmouseover="this.stop();" onmouseout="this.start();">
+                <p style="color:black;"><b>1. Government Farmer Website & Policies: </b><a href="https://farmer.gov.in/">Click Here</a></p>
+                <p style="color:black"><b>2. Small Farmer Policies:</b> <a href="https://enam.gov.in/web/stakeholders-Involved/farmers/">Click Here</a></p>
+                <p style="color:black"><b>3. Farmer Portal:</b> <a href="https://www.india.gov.in/farmers-portal">Click Here</a></p>
+                <p style="color:black"><b>4. mKissan Yojana: </b><a href="https://mkisan.gov.in/">Click Here</a></p>
+                <p style="color:black"><b>5. eNam Yojana:</b> <a href="https://www.enam.gov.in/web/">Click Here</a></p>
+            </marquee>
+
+
+        </div>
+
+    </div>
+    <div style="display:flex; flex-direction:row;">
+
+        <button class="btn-primary" style="font-size:100%; margin-right:5%; height:100%;width:137px">
+            <a style="color:white" href="https://www.farmkart.com/home">Shop Agri-Products</a>
+        </button>
+        <button class="btn-danger" style="font-size:100%;height:100%;width:120px">
+            <a style="color:white" asp-controller="User" asp-action="Feedback">Report SOS</a>
+        </button>
+
+
+        <br />
+    </div>
+
+    <button class="btn-warning" style="margin-top:13%">
+        <a style="color:white" asp-controller="User" asp-action="LoginUser">Back</a>
+    </button>
+
+</body>
+

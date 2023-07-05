@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewData["Title"] = "Kissan Sarthi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div #box {
+            border: 1px solid black;
+            margin-left: 65%;
+           margin-top:5%;
+            width: 33vw;
+        }
+    </style>
+</head>
+
+<body style="background-image:url(https://media.istockphoto.com/id/1091940998/photo/sunrise-strawberry-farm-landscape-agricultural-agriculture.jpg?s=612x612&w=0&k=20&c=PY6nR5kk5T4RwHd-aYBRCXA3Se3qYtflSKnJqjFu-PM=); background-repeat: no-repeat; background-size: 100% 100%;">
+
+    <h1 style="color:black; font-size: 200%; padding-left:35%"><b> Welcome to Kissan Sarthi</b></h1>
+    <marquee onmouseover="this.stop();" onmouseout="this.start();"><span style="font-size:160%; color:black">For Current Government Policy For farmer Welfare : <a href="https://agricoop.gov.in/en/PolicyDiv#gsc.tab=0" style="color:darkblue"> Click Here </a></span></marquee>
+
+    <div id="box">
+        <p style="text-align:center; background-color:green; color:white"><b>Latest Headline</b></p>
+        <marquee direction="up" ; onmouseover="this.stop();" onmouseout="this.start();">
+            <p style="color:white;"><b>1. Government Farmer Website & Policies: </b><a href="https://farmer.gov.in/" style="color:yellow">Click Here</a></p>
+            <p style="color:white"><b>2. Small Farmer Policies:</b> <a href="https://enam.gov.in/web/stakeholders-Involved/farmers/" style="color:yellow">Click Here</a></p>
+            <p style="color:white"><b>3. Farmer Portal:</b> <a href="https://www.india.gov.in/farmers-portal" style="color:yellow">Click Here</a></p>
+            <p style="color:white"><b>4. mKissan Yojana: </b><a href="https://mkisan.gov.in/" style="color:yellow">Click Here</a></p>
+            <p style="color:white"><b>5. eNam Yojana:</b> <a href="https://www.enam.gov.in/web/" style="color:yellow">Click Here</a></p>
+        </marquee>
+    </div>
+    <button class="btn-success" style="margin-left:46%;width:80px">
+        <a style="color:white" asp-controller="User" asp-action="LoginUser">Login In </a>
+    </button>
+
+
+    <h4 style="color:White;font-size:98%; margin-top:9%">Please Visit Us Again</h4>
+</body>
